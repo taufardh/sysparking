@@ -11,5 +11,8 @@ class Parkir extends Model
      protected $table = 'parkir';
      //Primary Key
      public $primaryKey = 'id';
-     protected $dateFormat = 'U';
+    //Timestamp
+    public $timestamp = true;
+
+     protected $fillable = ['plat_nomor', 'status', 'biaya'];
 }

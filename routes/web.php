@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::resource('parkirs', 'ParkirController');
 
 Route::get('/parkir-masuk','ParkirController@create');
+;

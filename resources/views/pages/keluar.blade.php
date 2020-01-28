@@ -6,7 +6,7 @@
             <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                <h1>Update Poem</h1>
+                <h1>Parkir Keluar</h1>
                 </div>
                 <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -29,41 +29,23 @@
                   <div class="card">
                     <div class="card-header p-2">
                       <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Poem Edit Form</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Konfirmasi</a></li>
                       </ul>
                     </div><!-- /.card-header -->
                     <div class="card-body">
                       <div class="tab-content"> 
                         <div class="active tab-pane" id="settings">
-                          {!! Form::open(['action' => ['ParkirController@update', $parkir->id], 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'form-horizontal']) !!}
+                          {!! Form::open(['route' => ['parkirs.update', $parkir->id], 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'form-horizontal']) !!}
                             <div class="form-group row">
-                              {{Form::label('title', 'Title',['class' => 'col-sm-2 col-form-label'])}}
+                              {{Form::label('plat_nomor', 'Plat Nomor',['class' => 'col-sm-2 col-form-label'])}}
                               <div class="col-sm-10">
-                                {{Form::text('title', $blog->title,['class' => 'form-control', 'placeholder' => 'Title'])}}
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              {{Form::label('body', 'Body',['class' => 'col-sm-2 col-form-label'])}}
-                              <div class="col-sm-10">
-                                  {{Form::textarea('body', $blog->body,['class' => 'textarea', 'style' => 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;', 'placeholder' => 'Type your poem here...'])}}
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              {{Form::label('location', 'Location',['class' => 'col-sm-2 col-form-label'])}}
-                              <div class="col-sm-10">
-                                {{Form::text('location', $blog->location,['class' => 'form-control', 'placeholder' => 'Location'])}}
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              {{Form::label('link_photo', 'Link_Photo',['class' => 'col-sm-2 col-form-label'])}}
-                              <div class="col-sm-10">
-                                {{Form::text('link_photo', $blog->link_photo,['class' => 'form-control', 'placeholder' => 'Link Photo'])}}
+                                {{Form::text('plat_nomor', $parkir->plat_nomor,['class' => 'form-control'])}}
                               </div>
                             </div>
                             <div class="form-group row">
                               <div class="offset-sm-2 col-sm-10">
                                 {{Form::hidden('_method','PUT')}}
-                                {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                                {{Form::submit('Keluar', ['class' => 'btn btn-primary'])}}
                               </div>
                             </div>
                           {!! Form::close() !!}

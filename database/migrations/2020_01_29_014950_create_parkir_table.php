@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddBayarToParkir extends Migration
+class CreateParkirTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddBayarToParkir extends Migration
      */
     public function up()
     {
-        Schema::table('parkir', function (Blueprint $table) {
-            //
-            $table->integer('bayar')->nullable();
+        Schema::create('parkir', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('plat_nomor');
+            $table->string('status');
+            $table->integer('bayar');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +29,6 @@ class AddBayarToParkir extends Migration
      */
     public function down()
     {
-        Schema::table('parkir', function (Blueprint $table) {
-            //
-            $table->dropColumn(['bayar']);
-        });
+        Schema::dropIfExists('parkir');
     }
 }

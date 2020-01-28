@@ -52,17 +52,24 @@
                             <td>{{$parkir->plat_nomor}}</td>
                             <td>{{$parkir->status}}</td>
                             <td>{{$parkir->created_at}}</td>
-                            @if($parkir->created_at == $parkir->updated_at)
+                            @if($parkir->created_at->timestamp == $parkir->updated_at->timestamp)
                                 <td>Masih Parkir</td>
                             @else
                                 <td>{{$parkir->updated_at}}</td>
                             @endif                        
                             <td>Rp. {{$parkir->bayar}}</td>
                             <td>
+                            @if($parkir->status == "masuk")
+                                <a href="/parkirs/{{$parkir->id}}/edit" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> KELUAR</a>
+                            @else
+                                <a href="/parkirs/{{$parkir->id}}" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> DETAIL</a>
+                            @endif
+                                <!--
                                 {!!Form::open(['action' => ['ParkirController@destroy', $parkir->id], 'method' => 'POST'])!!}
                                     {{Form::hidden('_method', 'DELETE')}}
                                     {{Form::submit('Delete', ['class' => 'btn btn-danger btn-xs'])}}
                                 {!!Form::close()!!}
+                                -->
                             </td>
                           </tr>
                         @endforeach
