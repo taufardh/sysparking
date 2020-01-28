@@ -11,4 +11,5 @@ class Parkir extends Model
      protected $table = 'parkir';
      //Primary Key
      public $primaryKey = 'id';
+     protected $dateFormat = 'U';
 }

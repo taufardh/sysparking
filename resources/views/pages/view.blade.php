@@ -6,7 +6,7 @@
             <div class="container-fluid">
               <div class="row mb-2">
                 <div class="col-sm-6">
-                  <h1 class="m-0 text-dark">View List Blog</h1>
+                  <h1 class="m-0 text-dark">View Data Parkir</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Blog Data</h3>
+                    <h3 class="card-title">Data Parkir</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -52,7 +52,12 @@
                             <td>{{$parkir->plat_nomor}}</td>
                             <td>{{$parkir->status}}</td>
                             <td>{{$parkir->created_at}}</td>
-                            <td>{{$parkir->updated_at}}</td>
+                            @if($parkir->created_at == $parkir->updated_at)
+                                <td>Masih Parkir</td>
+                            @else
+                                <td>{{$parkir->updated_at}}</td>
+                            @endif                        
+                            <td>Rp. {{$parkir->bayar}}</td>
                             <td>
                                 {!!Form::open(['action' => ['ParkirController@destroy', $parkir->id], 'method' => 'POST'])!!}
                                     {{Form::hidden('_method', 'DELETE')}}

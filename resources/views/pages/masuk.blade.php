@@ -29,7 +29,7 @@
                   <div class="card">
                     <div class="card-header p-2">
                       <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Poem Form</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Parkir Masuk</a></li>
                       </ul>
                     </div><!-- /.card-header -->
                     <div class="card-body">
@@ -37,28 +37,20 @@
                         <div class="active tab-pane" id="settings">
                           {!! Form::open(['route' => 'parkirs.store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
                             <div class="form-group row">
-                              {{Form::label('title', 'Title',['class' => 'col-sm-2 col-form-label'])}}
+                              {{Form::label('plat_nomor', 'Plat Nomor',['class' => 'col-sm-2 col-form-label'])}}
                               <div class="col-sm-10">
-                                {{Form::text('title','',['class' => 'form-control', 'placeholder' => 'Title', 'required'])}}
+                                {{Form::text('plat_nomor','',['class' => 'form-control', 'placeholder' => 'Plat Nomor', 'required'])}}
                               </div>
                             </div>
                             <div class="form-group row">
-                              {{Form::label('body', 'Body',['class' => 'col-sm-2 col-form-label'])}}
                               <div class="col-sm-10">
-                                  {{Form::textarea('body','',['class' => 'textarea', 'style' => 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;', 'placeholder' => 'Type your poem here...', 'required'])}}
+                                  {{Form::hidden('status','masuk',['class' => 'form-control', 'required'])}}
                               </div>
                             </div>
                             <div class="form-group row">
-                              {{Form::label('location', 'Location',['class' => 'col-sm-2 col-form-label'])}}
-                              <div class="col-sm-10">
-                                {{Form::text('location','',['class' => 'form-control', 'placeholder' => 'Location', 'required'])}}
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              {{Form::label('link_photo', 'Link_Photo',['class' => 'col-sm-2 col-form-label'])}}
-                              <div class="col-sm-10">
-                                {{Form::text('link_photo','',['class' => 'form-control', 'placeholder' => 'Link Photo', 'required'])}}
-                              </div>
+                                <div class="col-sm-10">
+                                    {{Form::hidden('bayar',2000,['class' => 'form-control', 'required'])}}
+                                </div>
                             </div>
                             <div class="form-group row">
                               <div class="offset-sm-2 col-sm-10">
