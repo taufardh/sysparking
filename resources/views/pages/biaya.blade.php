@@ -35,7 +35,7 @@
                           <p>Plat Nomor</p>
                       </div>
                       <div class="icon">
-                          <i class="ion ion-email"></i>
+                          <i class="ion ion-card"></i>
                       </div>
                       
                       </div>
@@ -50,7 +50,7 @@
                           <p>Lama Parkir</p>
                       </div>
                       <div class="icon">
-                          <i class="ion ion-ios-photos"></i>
+                          <i class="ion ion-ios-clock"></i>
                       </div>
                       
                       </div>
@@ -65,7 +65,7 @@
                           <p>Biaya</p>
                       </div>
                       <div class="icon">
-                          <i class="ion ion-document"></i>
+                          <i class="ion ion-cash"></i>
                       </div>
                       </div>
                   </div>
