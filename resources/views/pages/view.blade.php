@@ -60,7 +60,7 @@
                             <td>Rp. {{$parkir->bayar}}</td>
                             <td>
                             @if($parkir->status == "masuk")
-                                <a href="/parkirs/{{$parkir->id}}/edit" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> KELUAR</a>
+                                <a href="/parkirs/{{$parkir->id}}/edit" class="btn btn-danger btn-xs"><i class="fas fa-edit"></i> KELUAR</a>
                             @else
                                 <a href="/parkirs/{{$parkir->id}}" class="btn btn-info btn-xs"><i class="fas fa-edit"></i> DETAIL</a>
                             @endif
