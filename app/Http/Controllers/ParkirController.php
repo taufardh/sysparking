@@ -16,7 +16,7 @@ class ParkirController extends Controller
     {
         //
         $title = "Data Parkir";
-        $parkirs = Parkir::orderBy('id','desc')->get();
+        $parkirs = Parkir::orderBy('created_at','desc')->get();
         return view('pages.view')->with('parkirs', $parkirs)->with('title', $title);
     }
 
